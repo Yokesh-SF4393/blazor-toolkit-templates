@@ -28,7 +28,7 @@
       "path": "BlazorWebAssemblyTemplate.csproj"
     }
   ],
-  "shortName": "sfblazorwasm",
+  "shortName": "blazortoolkitwasm",
   "sourceName": "BlazorWebAssemblyTemplate",
   "symbols": {
     "Framework": {

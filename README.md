@@ -39,7 +39,7 @@ dotnet new update --check-only
 To verify which versions/templates are installed / available:
 
 ```bash
-dotnet new list sfblazor
+dotnet new list blazortoolkit
 ```
 
 To reinstall manually (for example, to pin a specific version):
@@ -61,8 +61,8 @@ dotnet new install Syncfusion.Blazor.Toolkit.Templates::<version>
 
 | Template | Description |
 | --- | --- |
-| `sfblazorweb` | Blazor Web App with server-side rendering and optional WebAssembly interactivity |
-| `sfblazorwasm` | Blazor WebAssembly Standalone App with Progressive Web App (PWA) support |
+| `blazortoolkitweb` | Blazor Web App with server-side rendering and optional WebAssembly interactivity |
+| `blazortoolkitwasm` | Blazor WebAssembly Standalone App with Progressive Web App (PWA) support |
 
 ## Usage
 
@@ -71,31 +71,31 @@ dotnet new install Syncfusion.Blazor.Toolkit.Templates::<version>
 Create a new Blazor Web App (default is `Server` interactivity):
 
 ```bash
-dotnet new sfblazorweb -o MyApp
+dotnet new blazortoolkitweb -o MyApp
 ```
 
 Create a static server-rendered app (no interactivity):
 
 ```bash
-dotnet new sfblazorweb -o MyApp -int None
+dotnet new blazortoolkitweb -o MyApp -int None
 ```
 
 Create a Blazor Web App with per-page interactive components:
 
 ```bash
-dotnet new sfblazorweb -o MyApp -int Auto
+dotnet new blazortoolkitweb -o MyApp -int Auto
 ```
 
 Create a Blazor Web App with interactive rendering enabled globally:
 
 ```bash
-dotnet new sfblazorweb -o MyApp -int Auto -ai
+dotnet new blazortoolkitweb -o MyApp -int Auto -ai
 ```
 
 Create a new standalone WebAssembly app:
 
 ```bash
-dotnet new sfblazorwasm -o MyApp
+dotnet new blazortoolkitwasm -o MyApp
 cd MyApp
 dotnet watch run
 ```
@@ -103,21 +103,21 @@ dotnet watch run
 Create a standalone WebAssembly PWA:
 
 ```bash
-dotnet new sfblazorwasm -o MyApp --pwa
+dotnet new blazortoolkitwasm -o MyApp --pwa
 ```
 
 Create an empty starter (omit sample pages and demo styling):
 
 ```bash
-dotnet new sfblazorweb -o MyApp -e
-dotnet new sfblazorwasm -o MyApp -e
+dotnet new blazortoolkitweb -o MyApp -e
+dotnet new blazortoolkitwasm -o MyApp -e
 ```
 
 Create an app without HTTPS (for local development only):
 
 ```bash
-dotnet new sfblazorweb -o MyApp --no-https
-dotnet new sfblazorwasm -o MyApp --no-https
+dotnet new blazortoolkitweb -o MyApp --no-https
+dotnet new blazortoolkitwasm -o MyApp --no-https
 ```
 
 The `--no-https` option removes the HTTPS launch profile while keeping the HTTP
@@ -127,8 +127,8 @@ web assets available.
 Create an app using explicit `Program.Main`:
 
 ```bash
-dotnet new sfblazorweb -o MyApp --use-program-main
-dotnet new sfblazorwasm -o MyApp --use-program-main
+dotnet new blazortoolkitweb -o MyApp --use-program-main
+dotnet new blazortoolkitwasm -o MyApp --use-program-main
 ```
 
 ### Options
@@ -146,8 +146,8 @@ dotnet new sfblazorwasm -o MyApp --use-program-main
 For the complete option list:
 
 ```bash
-dotnet new sfblazorweb --help
-dotnet new sfblazorwasm --help
+dotnet new blazortoolkitweb --help
+dotnet new blazortoolkitwasm --help
 ```
 
 ### Visual Studio Templates
@@ -180,5 +180,5 @@ dotnet new install .
 To verify the templates are installed:
 
 ```bash
-dotnet new list sfblazor
+dotnet new list blazortoolkit
 ```

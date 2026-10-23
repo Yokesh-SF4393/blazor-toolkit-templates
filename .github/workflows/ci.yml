@@ -65,7 +65,7 @@ jobs:
 
       - name: Verify templates are registered
         shell: bash
-        run: dotnet new list sfblazor
+        run: dotnet new list blazortoolkit
 
       # Runs every row of the CLI Flag Test Matrix from CONTRIBUTING.md.
       # Each row generates a fresh app and verifies it builds. The
@@ -105,21 +105,21 @@ jobs:
             rm -rf "$out"
           }
 
-          # sfblazorweb matrix
-          generate row-1-default       sfblazorweb
-          generate row-2-int-none      sfblazorweb --interactivity None
-          generate row-3-int-auto      sfblazorweb --interactivity Auto
-          generate row-4-int-auto-ai   sfblazorweb --interactivity Auto --all-interactive
-          generate row-5-int-wasm      sfblazorweb --interactivity WebAssembly
-          generate row-6-empty         sfblazorweb --empty
-          generate row-7-no-https      sfblazorweb --no-https
-          generate row-8-program-main  sfblazorweb --use-program-main
+          # blazortoolkitweb matrix
+          generate row-1-default       blazortoolkitweb
+          generate row-2-int-none      blazortoolkitweb --interactivity None
+          generate row-3-int-auto      blazortoolkitweb --interactivity Auto
+          generate row-4-int-auto-ai   blazortoolkitweb --interactivity Auto --all-interactive
+          generate row-5-int-wasm      blazortoolkitweb --interactivity WebAssembly
+          generate row-6-empty         blazortoolkitweb --empty
+          generate row-7-no-https      blazortoolkitweb --no-https
+          generate row-8-program-main  blazortoolkitweb --use-program-main
 
-          # sfblazorwasm matrix
-          generate row-9-wasm-default  sfblazorwasm
-          generate row-10-wasm-pwa     sfblazorwasm --pwa
-          generate row-11-wasm-empty   sfblazorwasm --empty
-          generate row-12-wasm-no-https sfblazorwasm --no-https
+          # blazortoolkitwasm matrix
+          generate row-9-wasm-default  blazortoolkitwasm
+          generate row-10-wasm-pwa     blazortoolkitwasm --pwa
+          generate row-11-wasm-empty   blazortoolkitwasm --empty
+          generate row-12-wasm-no-https blazortoolkitwasm --no-https
 
           echo "All 12 matrix rows generated and built successfully."
 

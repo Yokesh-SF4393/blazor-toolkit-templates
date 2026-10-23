@@ -39,7 +39,7 @@
       "path": "Blazor.Toolkit.Template.Client/Blazor.Toolkit.Template.Client.csproj"
     }
   ],
-  "shortName": "sfblazorweb",
+  "shortName": "blazortoolkitweb",
   "sourceName": "Blazor.Toolkit.Template",
   "sources": [
     {
