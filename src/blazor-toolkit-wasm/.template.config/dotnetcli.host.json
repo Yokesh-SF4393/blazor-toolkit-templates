@@ -34,7 +34,7 @@
     }
   },
   "usageExamples": [
-    "sfblazorwasm",
-    "sfblazorwasm --empty"
+    "blazortoolkitwasm",
+    "blazortoolkitwasm --empty"
   ]
 }

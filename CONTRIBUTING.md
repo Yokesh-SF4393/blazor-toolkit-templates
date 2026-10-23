@@ -56,18 +56,18 @@ For **every PR that touches a template** — even if your change is to a differe
 
 | # | Template | Flags | Reason |
 | --- | --- | --- | --- |
-| 1 | `sfblazorweb` | _(default)_ | Default Server interactivity. |
-| 2 | `sfblazorweb` | `-int None` | Static SSR path (no SignalR / WASM folders). |
-| 3 | `sfblazorweb` | `-int Auto` | Per-page interactivity. |
-| 4 | `sfblazorweb` | `-int Auto -ai` | Global interactivity. |
-| 5 | `sfblazorweb` | `-int WebAssembly` | WASM client project generated. |
-| 6 | `sfblazorweb` | `-e` | Empty template path. |
-| 7 | `sfblazorweb` | `--no-https` | HTTPS disabled. |
-| 8 | `sfblazorweb` | `--use-program-main` | Top-level statements disabled. |
-| 9 | `sfblazorwasm` | _(default)_ | Standalone WASM. |
-| 10 | `sfblazorwasm` | `--pwa` | PWA support. |
-| 11 | `sfblazorwasm` | `-e` | Empty template. |
-| 12 | `sfblazorwasm` | `--no-https` | HTTPS disabled. |
+| 1 | `blazortoolkitweb` | _(default)_ | Default Server interactivity. |
+| 2 | `blazortoolkitweb` | `-int None` | Static SSR path (no SignalR / WASM folders). |
+| 3 | `blazortoolkitweb` | `-int Auto` | Per-page interactivity. |
+| 4 | `blazortoolkitweb` | `-int Auto -ai` | Global interactivity. |
+| 5 | `blazortoolkitweb` | `-int WebAssembly` | WASM client project generated. |
+| 6 | `blazortoolkitweb` | `-e` | Empty template path. |
+| 7 | `blazortoolkitweb` | `--no-https` | HTTPS disabled. |
+| 8 | `blazortoolkitweb` | `--use-program-main` | Top-level statements disabled. |
+| 9 | `blazortoolkitwasm` | _(default)_ | Standalone WASM. |
+| 10 | `blazortoolkitwasm` | `--pwa` | PWA support. |
+| 11 | `blazortoolkitwasm` | `-e` | Empty template. |
+| 12 | `blazortoolkitwasm` | `--no-https` | HTTPS disabled. |
 
 When you add a flag, add a row. When you remove a flag, keep its row until its last-supported version reaches EOL.
 
