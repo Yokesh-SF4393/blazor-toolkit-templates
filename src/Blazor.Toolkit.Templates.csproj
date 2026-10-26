@@ -38,10 +38,6 @@
 				Exclude="**/bin/**;**/obj/**;**/.vs/**;**/*.user;**/*.csproj.user"
 				Pack="true" />
 
-		<Content Include="..\README.md"
-				Pack="true"
-				PackagePath="content/README.md" />
-
 		<Compile Remove="**\*" />
 		<EmbeddedResource Remove="**\*" />
 		<None Remove="**\*" />
