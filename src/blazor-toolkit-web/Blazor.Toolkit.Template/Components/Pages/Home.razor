@@ -121,7 +121,7 @@
                         {
                             <div class="fx-preview-form">
 
-                                <SfTextArea Placeholder="Tell us a little about yourself…" Rows="4" ResizeMode="Resize.None" />
+                                <SfTextArea Width="100%" Placeholder="Tell us a little about yourself…" RowCount="4" ResizeMode="Resize.None" />
 
                                 <div class="fx-preview-switch">
                                     <span>Enable notifications</span>
@@ -259,6 +259,9 @@
                         }
                         else if (group.Title == "Charts")
                         {
+                            @*#if (!UseServer && !UseWebAssembly) -->
+                            <div class="fx-static-chart">
+                            ##endif*@
                             <SfChart Title="Renewable Energy Generation in India (2015-2025)" SubTitle="Source: Wikipedia - Renewable Energy Statistics (India)">
 
                                 <ChartArea>
@@ -326,8 +329,10 @@
                                 <ChartLegendSettings EnableHighlight="true" />
 
                             </SfChart>
+                            @*#if (!UseServer && !UseWebAssembly) -->
+                            </div>
+                            ##endif*@
                         }
-
                     </div>
 
                     <div class="fx-card-components">
