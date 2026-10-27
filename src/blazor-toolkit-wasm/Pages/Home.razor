@@ -95,20 +95,24 @@
                                     <SfButton CssClass="e-danger">Delete</SfButton>
                                 </div>
                                 <div class="buttongroup-items">
-                                    <SfButtonGroup Mode="SelectionMode.Multiple">
-                                        <Button Value="@("bold")" Selected="@_formatting.Contains("bold")"
-                                                SelectedChanged="@((bool v) => ToggleFormat("bold", v))">Bold</Button>
-                                        <Button Value="@("italic")" Selected="@_formatting.Contains("italic")"
-                                                SelectedChanged="@((bool v) => ToggleFormat("italic", v))">Italic</Button>
-                                        <Button Value="@("underline")" Selected="@_formatting.Contains("underline")"
-                                                SelectedChanged="@((bool v) => ToggleFormat("underline", v))">Underline</Button>
+                                    <SfButtonGroup Mode="SelectionMode.Single">
+                                        <Button Selected="@(_selectedAlignment == "Left")"
+                                                SelectedChanged='@((bool selected) => OnAlignmentChanged("Left", selected))'>
+                                            Left
+                                        </Button>
+                                        <Button Selected="@(_selectedAlignment == "Center")"
+                                                SelectedChanged='@((bool selected) => OnAlignmentChanged("Center", selected))'>
+                                            Center
+                                        </Button>
+                                        <Button Selected="@(_selectedAlignment == "Right")"
+                                                SelectedChanged='@((bool selected) => OnAlignmentChanged("Right", selected))'>
+                                            Right
+                                        </Button>
                                     </SfButtonGroup>
                                 </div>
                                 <div class="demo-output" aria-live="polite">
-                                    <span class="demo-output-label">Active formats</span>
-                                    <span class="demo-output-value @( _formatting.Count == 0 ? "demo-output-empty" : string.Empty )">
-                                        @(_formatting.Count == 0 ? "none selected" : string.Join(" · ", _formatting))
-                                    </span>
+                                    <span class="demo-output-label">Selected:</span>
+                                    <span class="demo-output-value">@_selectedAlignment</span>
                                 </div>
                             </div>
                         }
@@ -427,34 +431,16 @@
             new[] { "loading", "busy", "progress" })
     };
 
+    private string _selectedAlignment = "Left";
+
+    private void OnAlignmentChanged(string alignment, bool selected)
+    {
+        if (selected)
+            _selectedAlignment = alignment;
+    }
+
     /// <summary>Total number of components across every group (including sub-groups).</summary>
     private int _totalComponents => _groups.Sum(g => g.Components.Count);
-
-    /// <summary>
-    /// Set of currently active text-formatting toggles in the
-    /// multi-select <see cref="SfButtonGroup"/> toolbar
-    /// (e.g. <c>"bold"</c>, <c>"italic"</c>, <c>"underline"</c>).
-    /// Seeded with <c>"bold"</c> so the demo opens with one item
-    /// already selected.
-    /// </summary>
-    private readonly List<string> _formatting = new() { "bold" };
-
-    /// <summary>
-    /// Adds or removes a formatting value in the multi-select toolbar,
-    /// keeping <see cref="_formatting"/> in sync with the user's choices.
-    /// </summary>
-    /// <param name="value">The formatting value to toggle (e.g. <c>"bold"</c>).</param>
-    /// <param name="selected">
-    /// <see langword="true"/> when the button became active;
-    /// <see langword="false"/> when it was deactivated.
-    /// </param>
-    private void ToggleFormat(string value, bool selected)
-    {
-        if (selected && !_formatting.Contains(value))
-            _formatting.Add(value);
-        else if (!selected)
-            _formatting.Remove(value);
-    }
 
     /// <summary>
     /// Date and time value bound to the <see cref="SfDateTimePicker"/>.
